@@ -1,12 +1,11 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
-import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
 
 class UserAvatarController {
   public async update(req: Request, res: Response): Promise<Response> {
-    const usersRepository = new UsersRepository();
-    const updateUserAvatar = new UpdateUserAvatarService(usersRepository);
+    const updateUserAvatar = container.resolve(UpdateUserAvatarService);
 
     const user = await updateUserAvatar.execute({
       user_id: req.user.id,
