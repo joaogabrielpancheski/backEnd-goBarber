@@ -42,13 +42,13 @@ class ListProviderMonthAvailabilityService {
     );
 
     const availability = eachDayArray.map(day => {
-      const appointmentsInDay = appointments.filter(
+      const hasAppointmentsInDay = appointments.filter(
         appointment => getDate(appointment.date) === day,
       );
 
       return {
         day,
-        available: appointmentsInDay.length < 10,
+        available: hasAppointmentsInDay.length < 10,
       };
     });
 
