@@ -8,14 +8,16 @@ interface ICacheConfig {
   };
 }
 
+const { REDIS_HOST, REDIS_PORT, REDIS_PASS } = process.env;
+
 export default {
   driver: 'redis',
 
   config: {
     redis: {
-      host: 'localhost',
-      port: 6379,
-      password: undefined,
+      host: REDIS_HOST,
+      port: REDIS_PORT,
+      password: REDIS_PASS || undefined,
     },
   },
 } as ICacheConfig;
