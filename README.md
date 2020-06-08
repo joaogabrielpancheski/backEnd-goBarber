@@ -18,7 +18,7 @@
     <img alt="Repository issues" src="https://img.shields.io/github/issues/joaogabrielpancheski/backEnd-goBarber.svg">
   </a>
 
-  <img alt="License" src="https://img.shields.io/github/license/joaogabrielpancheski/backEnd-goBarber.svg">
+  <img alt="License" src="https://img.shields.io/github/license/joaogabrielpancheski/backEnd-goBarber">
 </div>
 
 ## :clipboard: About
