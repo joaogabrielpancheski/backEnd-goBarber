@@ -1,69 +1,81 @@
-# Recuperação de senha
+<div align="center">
+  <img alt="GoBarber" src="https://ik.imagekit.io/joaogabrielpancheski/goBarberLogo_ma3Dr5ey9.png" />
 
-**RF**
+  <br />
+  <br />
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/joaogabrielpancheski/backEnd-goBarber.svg">
 
-**RNF**
+  <img alt="Language count" src="https://img.shields.io/github/languages/count/joaogabrielpancheski/backEnd-goBarber.svg">
 
-- Utilizar Mailtrap para testar envios em ambiente de dev;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/joaogabrielpancheski/backEnd-goBarber.svg">
 
-**RN**
+  <a href="https://github.com/joaogabrielpancheski/backEnd-goBarber/commits/master">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/joaogabrielpancheski/backEnd-goBarber.svg">
+  </a>
 
-- O link enviado por e-mail para resetar senha deve expirar em 2h;
-- O usuário precisa confirma a nova senha ao resetar sua senha;
+  <a href="https://github.com/joaogabrielpancheski/backEnd-goBarber/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/joaogabrielpancheski/backEnd-goBarber.svg">
+  </a>
 
-# Atualização do perfil
+  <img alt="License" src="https://img.shields.io/github/license/joaogabrielpancheski/backEnd-goBarber">
+</div>
 
-**RF**
+## :clipboard: About
 
-- O usuário deve poder atualizar seu nome, e-mail e senha;
+A barber scheduling application that allows users to schedule an appointment with a barber, and the barber to manage their appointment schedule. This project was developed at the [RocketSeat GoStack Bootcamp](https://rocketseat.com.br/gostack).
 
-**RN**
+## :wrench: Tools
 
-- O usuário não pode alterar seu e-mail para um e-mail já utilizado por outro usuário;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+The following tools were used in this project:
 
-# Painel do prestador
+- [NodeJS](https://nodejs.org)
+- [Yarn](https://yarnpkg.com/)
+- [Bcrypt.js](https://yarnpkg.com/package/bcryptjs)
+- [CSV Parse](https://yarnpkg.com/package/csv-parse)
+- [Date-fns](https://yarnpkg.com/package/date-fns)
+- [Dotenv](https://yarnpkg.com/package/dot-env)
+- [ESLint](https://yarnpkg.com/package/eslint)
+- [Express](https://yarnpkg.com/package/express)
+- [Jest](https://yarnpkg.com/package/jest)
+- [JWT](https://yarnpkg.com/package/jsonwebtoken)
+- [Multer](https://yarnpkg.com/package/multer)
+- [Prettier](https://yarnpkg.com/package/prettier)
+- [Redis](https://yarnpkg.com/package/redis)
+- [TypeORM](https://yarnpkg.com/package/typeorm)
+- [UUIDV4](https://yarnpkg.com/package/uuidv4)
+- [VS Code](https://code.visualstudio.com/) with [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- And other packages....
 
-**RF**
+## :information_source: How To Use
 
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houve um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v12.16](https://nodejs.org) or higher and [Yarn v1.22](https://yarnpkg.com/) or higher installed on your computer. <br />
+You'll also need to setup and run a Postgres, a Redis and a MongoDB database, and insert the necessary information in the .env file, based on the .env.example file, and the username and password on ormconfig.json file. <br />
+On your command line:
 
-**RNF**
+```bash
+# Clone this repository
+$ git clone https://github.com/joaogabrielpancheski/backEnd-goBarber.git
+# or
+$ git clone git@github.com:joaogabrielpancheski/backEnd-goBarber.git
 
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo real utilizando Socket.io;
+# Go into the repository
+$ cd backEnd-goBarber
 
-**RN**
+# Install dependencies
+$ yarn install
 
-- A notificação deve ter um status de lida ou não lida para que o prestador possa controlar;
+# Run migrations to your database
+$ yarn typeorm migration:run
 
-# Agendamento de serviços
+# Run the server
+$ yarn dev:server
+```
 
-**RF**
+## :memo: License
 
-- O usuário deve poder listar todos os prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
+This project is under the MIT license. See the [LICENSE](https://github.com/joaogabrielpancheski/backEnd-goBarber/blob/master/LICENSE) for more information.
 
-**RNF**
+---
 
-- A listagem de prestadores deve ser armazenada em cache;
-
-**RN**
-
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17h);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
+Developed by João Gabriel Pancheski 👨🏻‍💻 [Find me here](https://www.linkedin.com/in/joaogabrielpancheski/)
